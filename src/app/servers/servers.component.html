@@ -9,3 +9,8 @@ class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">
 <p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
+<hr>
+<h1>Practice</h1>
+<input type="text" class="form-control" [(ngModel)]="username">
+<button type="submit" class="btn btn-primary" [disabled]="username.length == 0" (click)="onSubmitUsername()">Submit</button>
+<p>{{ username }}</p>

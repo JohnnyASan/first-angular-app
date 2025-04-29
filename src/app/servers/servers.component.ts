@@ -10,6 +10,7 @@ export class ServersComponent {
   allowNewServer = false;
   serverCreationStatus = 'No server was created!';
   serverName = '';
+  username = '';
 
   constructor() {
     setTimeout(() => {
@@ -28,5 +29,15 @@ export class ServersComponent {
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
     console.log(event);
+  }
+
+  onSubmitUsername() {
+    this.username = this.username.trim();
+    if (this.username === '') {
+      alert('Please enter a username!');
+    } else {
+      alert('Username submitted: ' + this.username);
+    }
+    this.username = '';
   }
 }
